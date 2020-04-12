@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Consulta Médica - Cadastro</title>
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+		
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<script language="javascript">
+			
+			<!-- Valida Formulário -->
+			function funcValidaForm(){
+				var name = document.forms["cadUser"]["txtNome"].value;
+          var email = document.forms["cadUser"]["txtEmail"].value;
+          var rptemail = document.forms["cadUser"]["txtConfEmail"].value;
+          var psw = document.forms["cadUser"]["senha"].value;
+          var rptpsw = document.forms["cadUser"]["confSenha"].value;
+          var birthday = document.forms["cadUser"]["txtDataNascimento"].value;
+          var gender = document.forms["cadUser"]["sexo"].value;
+          var civil = document.forms["cadUser"]["civil"].value;
+          var phone = document.forms["cadUser"]["txtTelefoneRes"].value;
+          var cellphone = document.forms["cadUser"]["txtCelular"].value;
+          var address = document.forms["cadUser"]["txtEndereco"].value;
+          var number = document.forms["cadUser"]["txtNumero"].value;
+          var city = document.forms["cadUser"]["txtCidade"].value;
+          var state = document.forms["cadUser"]["estado"].value;
+          var message = document.forms["cadUser"]["txtMensagem"].value;
+		  var complemento = document.forms["cadUser"]["txtComplemento"].value;
+          var alertString= "";
+
+          if (name == "") {
+            alertString += "Preencha o Nome\n";
+          }
+          if (email == "") {
+            alertString += "Preencha o Email\n";
+          }
+          if (rptemail == "") {
+            alertString += "Preencha o Repetir Email\n";
+          }
+          if (psw == "") {
+            alertString += "Preencha a Senha\n";
+          }
+          if (rptpsw == "") {
+            alertString += "Preencha o Repetir Senha\n";
+          }
+          if (birthday == null || birthday == undefined || birthday == "") {
+            alertString += "Preencha a Data de Nascimento\n";
+          }
+          if (gender == null || gender == undefined || gender == "") {
+            alertString += "Preencha o Genero\n";
+          }
+          if (civil == null || civil == undefined || civil == "") {
+            alertString += "Preencha o Estado Civil\n";
+          }
+          if (phone == null || phone == undefined || phone == 0 || phone == "") {
+            alertString += "Preencha o Telefone Residencial\n";
+          }
+          if (cellphone == null || cellphone == undefined || cellphone == 0 || cellphone == "") {
+            alertString += "Preencha o Telefone Celular\n";
+          }
+          if (address == "") {
+            alertString += "Preencha o Endereco\n";
+          }
+		  if (number == null || number == undefined || number == "") {
+            alertString += "Preencha o Numero do Endereço\n";
+          }
+		  if (city == "") {
+            alertString += "Preencha a Cidade\n";
+          }
+		  if (state == null || state == undefined || state == "") {
+            alertString += "Preencha o Estado\n";
+          }
+          if (message == "") {
+            alertString += "Preencha a Mensagem";
+          }
+
+          if(alertString != ""){
+              alert(alertString);
+              return false;
+          }
+
+          if(email != rptemail){
+            alertString += "Emails não estão iguais\n"
+          }
+          if(psw != rptpsw){
+            alertString += "Senhas não estão iguais\n"
+          }
+
+          if(alertString != ""){
+              alert(alertString);
+              return false;
+          }
+
+          alertString = "Cadastro realizado com sucesso\n"
+          alertString += "\nNome: " + name;
+          alertString += "\nEmail: " + email;
+          alertString += "\nRepetir Email: " + rptemail;
+          alertString += "\nSenha: " + psw;
+          alertString += "\nRepetir Senha: " + rptpsw;
+          alertString += "\nData de Nascimento: " + birthday;
+          alertString += "\nSexo: " + gender;
+          alertString += "\nEstado civil: " + civil;
+          alertString += "\nTel. Residencial: " + phone;
+          alertString += "\nCelular: " + cellphone;
+          alertString += "\nEndereço: " + address;
+		  alertString += "\nNúmero: " + address;
+		  alertString += "\nComplemento: " + complemento;
+		  alertString += "\nCidade: " + address;
+		  alertString += "\nEstado: " + address;
+          alertString += "\nMensagem: " + message;
+
+          alert(alertString);
+            return true;
+		}
+		</script>
+		
+		<style type="text/css">
+			table {
+			  border-collapse: separate;
+			  border-spacing: 0 8px;
+			  margin-top: -8px;
+			}
+
+			td {
+			  <!-- border: 1px solid green; -->
+			  border-left-width: 0;
+			  min-width: 120px;
+			  height: 18px;
+			}
+
+			td:first-child {
+			  <!-- border-left-width: 1px; -->
+			}
+			tr.bordered {
+				border-bottom: 56px solid black;
+			}
+		</style>
+
+    </head>
+    <body>
+        <!-- NAV -->
+        <div class="container-fluid" style="background-color: #e3f2fd;">
+            <nav class="navbar navbar-expand-lg navbar-light">
+				<a class="navbar-brand" href="#">AgeCons</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul></ul>
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="Institucional.html">Institucional</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<!-- NAV -->
+		
+		<br>
+		
+		<div class="container-fluid">
+			<form id="cadUser" name="cadUser" class="form-inline">
+				<fieldset class="border p-2">
+					<legend  class="w-auto">Cadastro</legend>
+					<table class="form-group" border="0" cellspacing="2" cellpadding="2">
+						<tr>
+							<td><label for="txtNome">Nome</label></td>
+							<td colspan="1"><input type="text" name="txtNome" id="txtNome" class="form-control" style="width: 400px;"></td>
+							
+							<td><label for="txtDataNascimento">Data Nascimento</label></td>
+							<td><input type="date" name="txtDataNascimento" id="txtDataNascimento" class="form-control"></td>
+							
+							<td><label for="sexo">Sexo</label></td>
+							<td>
+								<input type="radio" id="M" name="sexo" value="Masculino" class="form-control">Masculino
+								<input type="radio" id="F" name="sexo" value="Feminino" class="form-control">Feminino
+							</td>
+						</tr>
+						<tr>
+							<td><label for="txtEmail">E-mail</label></td>
+							<td><input type="text" name="txtEmail" id="txtEmail" class="form-control" style="width: 400px;"></td>
+							
+							<td><label for="civil">Estado Civil</label></td>
+							<td>
+								<select name="civil" class="form-control">
+									<option id="0" value="">Selecione</option>
+									<option id="Sol" value="Solteiro">Solteiro(a)</option>
+									<option id="Cas" value="Casado">Casado (a)</option>
+									<option id="Div" value="Divorciado">Divorciado (a)</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="txtConfEmail">Confirme E-mail</label></td>
+							<td><input type="text" name="txtConfEmail" id="txtConfEmail" class="form-control" style="width: 400px;"></td>
+						</tr>
+						<tr class="bordered"></tr>
+						<tr>
+							<td><label for="txtEndereco">Endereço</label></td>
+							<td><input type="text" name="txtEndereco" id="txtEndereco" class="form-control" style="width: 400px;"></td>
+
+							<td><label for="txtNumero">Número</label></td>
+							<td><input type="text" name="txtNumero" id="txtNumero" class="form-control" style="width: 70px;"></td>
+						</tr>
+						<tr>
+							<td><label for="txtComplemento">Complemento</label></td>
+							<td><input type="text" name="txtComplemento" id="txtComplemento" class="form-control" style="width: 150px;"></td>
+							
+							<td><label for="txtCidade">Cidade</label></td>
+							<td><input type="text" name="txtCidade" id="txtCidade" class="form-control" style="width: 150px;"></td>
+							
+							<td><label for="txtEstado">Estado</label></td>
+							<td>
+								<select id="estado" name="estado" class="custom-select mr-sm-2 ">
+									<option value="AC">Acre</option>
+									<option value="AL">Alagoas</option>
+									<option value="AP">Amapá</option>
+									<option value="AM">Amazonas</option>
+									<option value="BA">Bahia</option>
+									<option value="CE">Ceará</option>
+									<option value="DF">Distrito Federal</option>
+									<option value="ES">Espírito Santo</option>
+									<option value="GO">Goiás</option>
+									<option value="MA">Maranhão</option>
+									<option value="MT">Mato Grosso</option>
+									<option value="MS">Mato Grosso do Sul</option>
+									<option value="MG">Minas Gerais</option>
+									<option value="PA">Pará</option>
+									<option value="PB">Paraíba</option>
+									<option value="PR">Paraná</option>
+									<option value="PE">Pernambuco</option>
+									<option value="PI">Piauí</option>
+									<option value="RJ">Rio de Janeiro</option>
+									<option value="RN">Rio Grande do Norte</option>
+									<option value="RS">Rio Grande do Sul</option>
+									<option value="RO">Rondônia</option>
+									<option value="RR">Roraima</option>
+									<option value="SC">Santa Catarina</option>
+									<option value="SP">São Paulo</option>
+									<option value="SE">Sergipe</option>
+									<option value="TO">Tocantins</option>
+									<option value="ET">Estrangeiro</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="txtTelefoneRes">Tel. Residencial</label></td>
+							<td><input type="text" name="txtTelefoneRes" id="txtTelefoneRes" class="form-control"></td>
+
+							<td><label for="txtCelular">Celular</label></td>
+							<td><input type="text" name="txtCelular" id="txtCelular" class="form-control"></td>
+						<tr>
+							<td><label for="txtMensagem">Mensagem</label></td>
+							<td colspan="3"><textarea rows="4" cols="50" name="txtMensagem" id="txtMensagem" form="cadUser" class="form-control" style="width: 95%;"></textarea></td>
+						</tr>
+						<tr>
+							<td><label for="senha">Senha</label></td>
+							<td><input type="password" name="senha" id="senha" class="form-control"></td>
+							
+							<td><label for="confSenha">Confirme Senha</label></td>
+							<td><input type="password" name="confSenha" id="confSenha" class="form-control"></td>&nbsp;
+						</tr>
+					</table>
+					<div class="text-right">
+						<input type="button" name="btnEnviar" id="btnEnviar" class="btn btn-lg btn-primary" value="Enviar" onclick="funcValidaForm()">
+					</div>
+					
+				</fieldset>
+			</form>
+		</div>
+		
+		<br />
+		
+		<!-- Exibe o resultado do Cadastro efetuado -->
+		<div id="cadResult" class="container-fluid"></div>
+		
+		<br />
+		
+		<div class="card-footer text-muted">
+			Footer
+	    </div>
+    </body>
+</html>
